@@ -16,7 +16,7 @@ function clearCanvas() {
 function fillCanvas(gridSize) {
     for(let i = 0; i < gridSize; ++i) {
         const newRow = document.createElement('div');
-            newRow.setAttribute("style", "display: flex; flex-direction: row; flex-grow: 1;")
+            newRow.setAttribute("style", "display: flex; flex-direction: column; flex: 1; align-items: stretch;")
         for(let j = 0; j < gridSize; ++j) {
             newRow.appendChild(setupPixelDiv());
         }
@@ -27,7 +27,7 @@ function fillCanvas(gridSize) {
 //prepares 'pixel div' to be added inside a pixel row in canvas
 function setupPixelDiv() {
     const pixelDiv = document.createElement('div');
-    pixelDiv.setAttribute("style", "background: white; flex-grow: 1;");
+    pixelDiv.setAttribute("style", "background: white; flex: 1;");
     pixelDiv.addEventListener('mouseover', () => {
         pixelDiv.style.backgroundColor = colorSelector.value;
     });

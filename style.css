@@ -1,0 +1,26 @@
+body {
+    background-color: darkslategrey;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main {
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    
+}
+
+.canvas {
+    width: 480px;
+    height: 480px;
+    border: 2px solid white;
+    display: flex;
+}
+
+.settings-container {
+    background-color: white;
+    width: 180px;
+}

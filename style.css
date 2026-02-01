@@ -1,5 +1,5 @@
 body {
-    background-color: darkslategrey;
+    background-color: #FF9B51   ;
     height: 100vh;
     display: flex;
     justify-content: center;
@@ -10,13 +10,14 @@ body {
     display: flex;
     flex-direction: row;
     align-items: stretch;
-    
+    border: 8px solid #262626;
+    border-radius: 3px;
 }
 
 .canvas {
     width: 480px;
     height: 480px;
-    border: 2px solid white;
+    border-right: 8px solid #262626;
 }
 
 #canvas-row-container {
@@ -27,6 +28,35 @@ body {
 }
 
 .settings-container {
-    background-color: white;
+    background-color: #25343F;
     width: 180px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 8px;
+}
+
+#color-settings {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#button-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+button.interactive {
+    height: 40px;
+    width: 40%;
+    cursor: pointer;
+}
+
+.interactive {
+    color: #262626;
+    background-color: #BFC9D1;
+    font-weight: bold;
+    text-align: center;
 }

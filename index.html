@@ -13,7 +13,7 @@
             <div id="canvas-row-container"></div>
         </div>
         <div class="settings-container">
-            <div class="grid-settings interactive">
+            <div class="interactive" id="grid-settings">
                 <label for="grid-selector">Specify Grid Size</label>
                 <input 
                     type="number"
@@ -24,15 +24,23 @@
                 >
                     
             </div>
-            <div class="color-select-container">
-                <label>Choose A Color</label>
+            <div class="interactive" id="color-settings">
+                <label for="brush-selector">Choose Brush Color</label>
                 <input
                     type="color"
-                    id="color-selector"
+                    id="brush-selector"
+                >
+                <label for="canvas-selector">Choose Canvas Color</label>
+                <input
+                    type="color"
+                    id="canvas-selector"
+                    value="white"
                 >
             </div>
-            <button class="interactive" id="reset">Reset</button>
-            <button class="interactive" id="apply">Apply</button>
+            <div id="button-container">
+                <button class="interactive" id="reset">Reset</button>
+                <button class="interactive" id="apply">Apply</button>
+            </div>
         </div>
     </div>
 </body>

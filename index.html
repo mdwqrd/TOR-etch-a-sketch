@@ -19,16 +19,21 @@
                     type="number"
                     id="grid-selector"
                     name="grid-selector"
-                    max="64"
+                    min="1"
+                    max="128"
                     value="16"
+                    required
                 >
-                    
+                <span id="grid-warning" style="color:red; display: none;">
+                    Value for Grid must be within [1;128] range.
+                </span>
             </div>
             <div class="interactive" id="color-settings">
                 <label for="brush-selector">Choose Brush Color</label>
                 <input
                     type="color"
                     id="brush-selector"
+                    value="black"
                 >
                 <label for="canvas-selector">Choose Canvas Color</label>
                 <input

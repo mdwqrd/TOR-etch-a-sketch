@@ -5,6 +5,7 @@ const bgSelector = document.getElementById('canvas-selector');
 const gridSelector = document.getElementById('grid-selector');
 const applyButton = document.getElementById('apply');
 const resetButton = document.getElementById('reset');
+const gridWarning = document.getElementById('grid-warning');
 
 let bgColor = bgSelector.value;
 let brushColor = brushSelector.value;
@@ -48,7 +49,12 @@ function updateColors() {
 }
 
 function updateGrid() {
-    grid = gridSelector.value;
+    if(gridSelector.value < gridSelector.min)
+        grid = gridSelector.min;
+    else if(gridSelector.value > gridSelector.max) 
+        grid = gridSelector.max;
+    else
+        grid = gridSelector.value;
 }
 
 function updateSettings() {
@@ -71,7 +77,16 @@ applyButton.addEventListener("click", setupCanvas);
 resetButton.addEventListener("click", resetCanvas);
 
 gridSelector.addEventListener("input", function(event) {
-    grid = event.target.value;
+    const min = Number(gridSelector.min);
+    const max = Number(gridSelector.max);
+    const value = Number(gridSelector.value);
+    if(value < min || value > max) {
+        gridWarning.style.display = "inline";
+        grid = event
+    } else {
+        gridWarning.style.display = "none";
+        grid = event.target.value;
+    }
     console.log("Grid value updated.");
 });
 
